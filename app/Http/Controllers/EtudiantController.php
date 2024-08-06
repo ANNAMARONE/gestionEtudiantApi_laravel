@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEtudiantRequest;
 use App\Http\Requests\UpdateEtudiantRequest;
 use App\Models\Etudiant;
+use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
 {
@@ -27,7 +28,7 @@ class EtudiantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreEtudiantRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +52,7 @@ class EtudiantController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEtudiantRequest $request, Etudiant $etudiant)
+    public function update(Request $request, Etudiant $etudiant)
     {
         //
     }
