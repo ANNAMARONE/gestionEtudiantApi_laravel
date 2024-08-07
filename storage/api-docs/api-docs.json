@@ -1,0 +1,977 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "description": "Your API Description",
+        "version": "1.0.0"
+    },
+    "security": [
+        {
+            "BearerAuth": []
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "consumes": [
+        "multipart/form-data"
+    ],
+    "paths": {
+        "/api/auth/refresh": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "refresh"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "deconnexion"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Authorization",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "bearer",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "access_token": {
+                                        "type": "string"
+                                    },
+                                    "token_type": {
+                                        "type": "string"
+                                    },
+                                    "expires_in": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MjMwMDc3NDIsImV4cCI6MTcyMzAwOTQyMiwibmJmIjoxNzIzMDA3NzQyLCJqdGkiOiJMUVp3S2tVTTFueUtyTG1zIiwic3ViIjoiMTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DJzurkGhwvcmmSUdpOblALPZEFyZiiqVRgCXttoKREI",
+                                "token_type": "bearer",
+                                "expires_in": 1680
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/notes/3": {
+            "get": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "afficher_note"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/updateNotes/3": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "update_note"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "date_evaluation": {
+                                        "type": "string"
+                                    },
+                                    "note": {
+                                        "type": "integer"
+                                    },
+                                    "etudiant_id": {
+                                        "type": "integer"
+                                    },
+                                    "matiere_id": {
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "type": "string"
+                                    },
+                                    "updated_at": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "id": 3,
+                                "date_evaluation": "2024-04-06",
+                                "note": 18,
+                                "etudiant_id": 1,
+                                "matiere_id": 8,
+                                "created_at": "2024-08-07T04:09:10.000000Z",
+                                "updated_at": "2024-08-07T04:09:10.000000Z"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/note/1": {
+            "delete": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "204": {
+                        "description": "Deleted successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "delete_Note"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/Note": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "ajouter_note"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "date_evaluation",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "note",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "matiere_id",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "etudiant_id",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "date_evaluation": {
+                                        "type": "string"
+                                    },
+                                    "note": {
+                                        "type": "integer"
+                                    },
+                                    "etudiant_id": {
+                                        "type": "integer"
+                                    },
+                                    "matiere_id": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "date_evaluation": "2024-04-06",
+                                "note": 17,
+                                "etudiant_id": 1,
+                                "matiere_id": 8
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Etudiant/2": {
+            "delete": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "204": {
+                        "description": "Deleted successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "delete_Etudiant"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/etudiants/1": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "updateEtudiant"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "telephone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "date_de_naissance": {
+                                        "type": "string"
+                                    },
+                                    "photo": {
+                                        "type": "string"
+                                    },
+                                    "deleted_at": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "created_at": {
+                                        "type": "string"
+                                    },
+                                    "updated_at": {
+                                        "type": "string"
+                                    },
+                                    "matricule": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "id": 1,
+                                "prenom": "Jean",
+                                "nom": "Dupont",
+                                "adresse": "123 Rue de Paris, 75000 Paris",
+                                "telephone": "1234567890",
+                                "email": "marone@gmail.com",
+                                "date_de_naissance": "2000-01-01",
+                                "photo": "data:image/jpeg;base64,/9j/4A.png",
+                                "deleted_at": null,
+                                "created_at": "2024-08-06T19:04:15.000000Z",
+                                "updated_at": "2024-08-06T19:04:15.000000Z",
+                                "matricule": "ELE128"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/etudiant": {
+            "get": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "afficher_etudiant"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/createEtudiant": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "ajoute_etudiant"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "telephone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "date_de_naissance": {
+                                        "type": "string"
+                                    },
+                                    "photo": {
+                                        "type": "string"
+                                    },
+                                    "matricule": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "prenom": "marie",
+                                "nom": "Marone",
+                                "adresse": "123 Rue de Paris, 75000 Paris",
+                                "telephone": "0123457789",
+                                "email": "maronemarie@gmail.com",
+                                "date_de_naissance": "2002-01-01",
+                                "photo": "data:image/jpeg;base64,/9j/4A.png",
+                                "matricule": "ELE163"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "login"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "email",
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "password",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "name": "fatou mata",
+                                "email": "fatou@gmail.com",
+                                "password": "fatou1234",
+                                "password_confirmation": "fatou1234"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/register": {
+            "post": {
+                "summary": "New Request",
+                "description": "",
+                "responses": {
+                    "201": {
+                        "description": "Created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Register"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "name": "fatou mata",
+                                "email": "fatou@gmail.com",
+                                "password": "fatou1234",
+                                "password_confirmation": "fatou1234"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

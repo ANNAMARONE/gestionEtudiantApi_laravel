@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Etudiant extends Model
 {
     use HasFactory;
+    protected $guarded=[];
+    
     public function eveluation(){
         return $this->hasMany(Evaluation::class);
     }
