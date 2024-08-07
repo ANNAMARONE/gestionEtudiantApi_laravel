@@ -27,7 +27,7 @@ namespace App\Http\Controllers\Annotations ;
 
  * @OA\GET(
  *     path="/api/etudiant",
- *     summary="New Request",
+ *     summary="afficher_etudiant",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}

@@ -26,8 +26,8 @@ namespace App\Http\Controllers\Annotations ;
  *
 
  * @OA\GET(
- *     path="/api/notes/3",
- *     summary="New Request",
+ *     path="/api/notes/{id}",
+ *     summary="afficher_note",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}
@@ -35,6 +35,8 @@ namespace App\Http\Controllers\Annotations ;
  * @OA\Response(response="200", description="OK"),
  * @OA\Response(response="404", description="Not Found"),
  * @OA\Response(response="500", description="Internal Server Error"),
+ *     @OA\Parameter(in="path", name="id", required=false, @OA\Schema(type="string")
+ * ),
  *     @OA\Parameter(in="header", name="User-Agent", required=false, @OA\Schema(type="string")
  * ),
  *     tags={"afficher_note"},

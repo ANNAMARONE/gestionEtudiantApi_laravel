@@ -27,7 +27,7 @@ namespace App\Http\Controllers\Annotations ;
 
  * @OA\POST(
  *     path="/api/auth/logout",
- *     summary="New Request",
+ *     summary="logout",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}

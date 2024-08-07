@@ -27,7 +27,7 @@ namespace App\Http\Controllers\Annotations ;
 
  * @OA\POST(
  *     path="/api/createEtudiant",
- *     summary="New Request",
+ *     summary="ajoute_etudiant",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}

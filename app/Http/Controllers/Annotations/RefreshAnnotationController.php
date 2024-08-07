@@ -27,7 +27,7 @@ namespace App\Http\Controllers\Annotations ;
 
  * @OA\POST(
  *     path="/api/auth/refresh",
- *     summary="New Request",
+ *     summary="refresh",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}

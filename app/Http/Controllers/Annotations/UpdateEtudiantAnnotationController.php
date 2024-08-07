@@ -26,8 +26,8 @@ namespace App\Http\Controllers\Annotations ;
  *
 
  * @OA\POST(
- *     path="/api/etudiants/1",
- *     summary="New Request",
+ *     path="/api/etudiants/{id}",
+ *     summary="update_etudiant",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}
@@ -36,6 +36,8 @@ namespace App\Http\Controllers\Annotations ;
  * @OA\Response(response="400", description="Bad Request"),
  * @OA\Response(response="401", description="Unauthorized"),
  * @OA\Response(response="403", description="Forbidden"),
+ *     @OA\Parameter(in="path", name="id", required=false, @OA\Schema(type="string")
+ * ),
  *     @OA\Parameter(in="header", name="User-Agent", required=false, @OA\Schema(type="string")
  * ),
  *     @OA\RequestBody(

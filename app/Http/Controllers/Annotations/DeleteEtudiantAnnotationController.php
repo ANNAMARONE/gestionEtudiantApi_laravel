@@ -26,8 +26,8 @@ namespace App\Http\Controllers\Annotations ;
  *
 
  * @OA\DELETE(
- *     path="/api/Etudiant/2",
- *     summary="New Request",
+ *     path="/api/Etudiant/{id}",
+ *     summary="delete_etudiant",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}
@@ -36,7 +36,7 @@ namespace App\Http\Controllers\Annotations ;
  * @OA\Response(response="401", description="Unauthorized"),
  * @OA\Response(response="403", description="Forbidden"),
  * @OA\Response(response="404", description="Not Found"),
- *     @OA\Parameter(in="path", name="", required=false, @OA\Schema(type="string")
+ *     @OA\Parameter(in="path", name="id", required=false, @OA\Schema(type="string")
  * ),
  *     @OA\Parameter(in="path", name="", required=false, @OA\Schema(type="string")
  * ),

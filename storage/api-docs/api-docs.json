@@ -25,7 +25,7 @@
     "paths": {
         "/api/auth/refresh": {
             "post": {
-                "summary": "New Request",
+                "summary": "refresh",
                 "description": "",
                 "responses": {
                     "201": {
@@ -79,7 +79,7 @@
         },
         "/api/auth/logout": {
             "post": {
-                "summary": "New Request",
+                "summary": "logout",
                 "description": "",
                 "responses": {
                     "201": {
@@ -166,9 +166,9 @@
                 }
             }
         },
-        "/api/notes/3": {
+        "/api/notes/{id}": {
             "get": {
-                "summary": "New Request",
+                "summary": "afficher_note",
                 "description": "",
                 "responses": {
                     "200": {
@@ -204,6 +204,11 @@
                 ],
                 "parameters": [
                     {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    },
+                    {
                         "in": "header",
                         "name": "User-Agent",
                         "type": "string"
@@ -211,9 +216,9 @@
                 ]
             }
         },
-        "/api/updateNotes/3": {
+        "/api/updateNotes/{id}": {
             "post": {
-                "summary": "New Request",
+                "summary": "update_note",
                 "description": "",
                 "responses": {
                     "201": {
@@ -257,6 +262,11 @@
                     "update_note"
                 ],
                 "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    },
                     {
                         "in": "header",
                         "name": "User-Agent",
@@ -306,9 +316,9 @@
                 }
             }
         },
-        "/api/note/1": {
+        "/api/note/{id}": {
             "delete": {
-                "summary": "New Request",
+                "summary": "delete_note",
                 "description": "",
                 "responses": {
                     "204": {
@@ -353,6 +363,11 @@
                 ],
                 "parameters": [
                     {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    },
+                    {
                         "in": "header",
                         "name": "User-Agent",
                         "type": "string"
@@ -362,7 +377,7 @@
         },
         "/api/Note": {
             "post": {
-                "summary": "New Request",
+                "summary": "ajouter_note",
                 "description": "",
                 "responses": {
                     "201": {
@@ -463,9 +478,9 @@
                 }
             }
         },
-        "/api/Etudiant/2": {
+        "/api/Etudiant/{id}": {
             "delete": {
-                "summary": "New Request",
+                "summary": "delete_etudiant",
                 "description": "",
                 "responses": {
                     "204": {
@@ -511,7 +526,7 @@
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "",
+                        "name": "id",
                         "type": "string"
                     },
                     {
@@ -527,9 +542,9 @@
                 ]
             }
         },
-        "/api/etudiants/1": {
+        "/api/etudiants/{id}": {
             "post": {
-                "summary": "New Request",
+                "summary": "update_etudiant",
                 "description": "",
                 "responses": {
                     "201": {
@@ -573,6 +588,11 @@
                     "updateEtudiant"
                 ],
                 "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    },
                     {
                         "in": "header",
                         "name": "User-Agent",
@@ -629,7 +649,7 @@
                                 "prenom": "Jean",
                                 "nom": "Dupont",
                                 "adresse": "123 Rue de Paris, 75000 Paris",
-                                "telephone": "1234567890",
+                                "telephone": "1234567898",
                                 "email": "marone@gmail.com",
                                 "date_de_naissance": "2000-01-01",
                                 "photo": "data:image/jpeg;base64,/9j/4A.png",
@@ -645,7 +665,7 @@
         },
         "/api/etudiant": {
             "get": {
-                "summary": "New Request",
+                "summary": "afficher_etudiant",
                 "description": "",
                 "responses": {
                     "200": {
@@ -690,7 +710,7 @@
         },
         "/api/createEtudiant": {
             "post": {
-                "summary": "New Request",
+                "summary": "ajoute_etudiant",
                 "description": "",
                 "responses": {
                     "201": {
@@ -784,13 +804,13 @@
                             },
                             "example": {
                                 "prenom": "marie",
-                                "nom": "Marone",
+                                "nom": "MaroneApp",
                                 "adresse": "123 Rue de Paris, 75000 Paris",
-                                "telephone": "0123457789",
-                                "email": "maronemarie@gmail.com",
+                                "telephone": "0123857788",
+                                "email": "marie@gmail.com",
                                 "date_de_naissance": "2002-01-01",
                                 "photo": "data:image/jpeg;base64,/9j/4A.png",
-                                "matricule": "ELE163"
+                                "matricule": "ELE161"
                             }
                         }
                     }
@@ -799,7 +819,7 @@
         },
         "/api/auth/login": {
             "post": {
-                "summary": "New Request",
+                "summary": "login",
                 "description": "",
                 "responses": {
                     "201": {
@@ -865,108 +885,17 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
                                     "email": {
                                         "type": "string"
                                     },
                                     "password": {
                                         "type": "string"
-                                    },
-                                    "password_confirmation": {
-                                        "type": "string"
                                     }
                                 }
                             },
                             "example": {
-                                "name": "fatou mata",
-                                "email": "fatou@gmail.com",
-                                "password": "fatou1234",
-                                "password_confirmation": "fatou1234"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/auth/register": {
-            "post": {
-                "summary": "New Request",
-                "description": "",
-                "responses": {
-                    "201": {
-                        "description": "Created successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {},
-                                "example": ""
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {},
-                                "example": ""
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "application/json": {
-                                "schema": {},
-                                "example": ""
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "content": {
-                            "application/json": {
-                                "schema": {},
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "tags": [
-                    "Register"
-                ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "type": "string"
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "password_confirmation": {
-                                        "type": "string"
-                                    }
-                                }
-                            },
-                            "example": {
-                                "name": "fatou mata",
-                                "email": "fatou@gmail.com",
-                                "password": "fatou1234",
-                                "password_confirmation": "fatou1234"
+                                "email": "annamarone@gmail.com",
+                                "password": "anna2001"
                             }
                         }
                     }

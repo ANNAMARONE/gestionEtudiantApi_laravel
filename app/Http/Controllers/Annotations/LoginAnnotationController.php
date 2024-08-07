@@ -27,7 +27,7 @@ namespace App\Http\Controllers\Annotations ;
 
  * @OA\POST(
  *     path="/api/auth/login",
- *     summary="New Request",
+ *     summary="login",
  *     description="",
  *         security={
  *    {       "BearerAuth": {}}
@@ -49,10 +49,8 @@ namespace App\Http\Controllers\Annotations ;
  *             @OA\Schema(
  *                 type="object",
  *                 properties={
- *                     @OA\Property(property="name", type="string"),
  *                     @OA\Property(property="email", type="string"),
  *                     @OA\Property(property="password", type="string"),
- *                     @OA\Property(property="password_confirmation", type="string"),
  *                 },
  *             ),
  *         ),
