@@ -127,14 +127,14 @@ class EtudiantController extends Controller
             'email' => [
                 'required',
                 'email',
-                Rule::unique('etudiants', 'email')->ignore($request->etudiant_id),
+                Rule::unique('etudiants', 'email')->ignore($request->id),
             ],
             'date_de_naissance' => 'required|date',
             'photo' => 'required|string',
             'matricule' => [
                 'required',
                 'string',
-                Rule::unique('etudiants', 'matricule')->ignore($request->etudiant_id), 
+                Rule::unique('etudiants', 'matricule')->ignore($request->id), 
             ],
         ]);
     
